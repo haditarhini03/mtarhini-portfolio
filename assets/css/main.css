@@ -1,0 +1,331 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: white;
+  min-height: 100vh;
+  overflow-x: hidden;
+    font-family: "Kumar One", serif;
+
+}
+
+
+/* =========================
+  FRAME
+========================= */
+
+.hero {
+  height: 100vh;
+  width: 100vw;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+
+/* =========================
+  TOP BANNER
+========================= */
+
+.hero::before {
+  content: "MOHAMAD TARHINI";
+  position: absolute;
+  top: 0;
+  height: 20%;
+  width:100%;
+  display: flex;
+  align-items: center;
+  padding-left: 90px;
+  font-size: 36px;
+  letter-spacing: 2px;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  z-index: 3;
+}
+
+/* =========================
+  BACKGROUND
+========================= */
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================
+  PERSON
+========================= */
+
+.hero-person {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 80vh;
+  z-index: 1;
+}
+
+/* =========================
+  RIGHT TITLES
+========================= */
+
+.hero-titles {
+  position: absolute;
+  right: 80px;
+  top: 80%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.hero-titles p {
+  font-size: 26px;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  opacity: 0.85;
+}
+/* =========================
+   SIDENAV BASE
+========================= */
+
+.sidenav {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 90px;
+  height: 80%;
+  border-right: 1px solid rgba(255,255,255,0.3);
+  z-index: 4;
+}
+
+.sidenav-collapsed {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =========================
+   MENU CONTAINER
+========================= */
+
+.menu-container {
+  position: relative;
+  height: 60%;
+  width: 100%;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Rotated menu text */
+.menu-text {
+  transform: rotate(-90deg);
+  font-size: 36px;
+  letter-spacing: 2px;
+}
+
+/* =========================
+   EXPANDED PANEL
+========================= */
+
+.sidenav-expanded {
+  position: absolute;
+  left: 90px;
+  top: 0;
+  width: calc(100vw - 90px);
+  height: 100%;
+  background: rgba(217, 217, 217, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 120px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+/* Expand ONLY on menu hover */
+.menu-container:hover .sidenav-expanded {
+  opacity: 1;
+  pointer-events: auto;
+  
+}
+
+/* =========================
+   SOCIAL CONTAINER
+========================= */
+
+.social-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.social-icons img {
+  width: 36px;
+  height: 36px;
+}
+
+/* =========================
+   LANGUAGE
+========================= */
+
+.lang-switch {
+  height: 50px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  cursor: pointer;
+  gap: 5px;
+}
+
+/* =========================
+   EXPANDED CONTENT
+========================= */
+
+.nav-links {
+  list-style: none;
+}
+
+.nav-links li {
+  font-size: 26px;
+  margin-bottom: 22px;
+}
+
+.email {
+  font-size: 23px;
+}
+.site-footer {
+  width: 100%;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  font-family: "Kumar One", serif;
+}
+.footer-bg {
+  height: 340px;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.footer-bg img {
+  width: 100%;
+  height: 335px;
+  object-fit: cover;
+
+}
+/* =========================
+   TOP SECTION
+========================= */
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 80px;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+.newsletter-left h4 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.newsletter-left p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.newsletter-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.newsletter-right .arrow {
+  font-size: 22px;
+}
+
+/* =========================
+   MIDDLE SECTION
+========================= */
+
+.footer-middle {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  padding: 40px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  font-size: 24px;
+}
+
+.footer-link {
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* =========================
+   BOTTOM SECTION
+========================= */
+
+.footer-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  text-align: center; 
+  font-family: 'Inter' !important; 
+}
+
+.footer-copy,
+.footer-partner {
+  padding: 20px 40px;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.footer-copy {
+  border-right: 1px solid rgba(255,255,255,0.3);
+  width: 95%;
+}
+.footer-partner{
+  width: 105%;
+}
+.background, .investment {
+  padding-top: 120px;
+  padding-left: 90px;
+    color: black;
+
+}
+
+.background h1, .investment h1 {
+  padding-bottom: 25px;
+  font-size: 36px;
+  color: black;
+}
+.background p{
+  max-width: 80%;
+  padding-top: 20px;
+  font-size: 24px;
+  font-family: 'Inter';
+  style: regular;
+}
