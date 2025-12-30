@@ -1,39 +1,120 @@
+/* =========================
+   RESET
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+    overflow-x: hidden;
 
+}
+#investment {
+  scroll-margin-top: -100px;
+}
 body {
   color: white;
   min-height: 100vh;
   overflow-x: hidden;
-    font-family: "Kumar One", serif;
-
+  overflow-y: auto; /* ✅ allow vertical scrolling */
+  font-family: "Kumar One", serif;
+}
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+@media (max-width: 900px) {
+  .sidenav-expanded {
+    display: none !important;
+  }
 }
 
+@media (max-width: 900px){
+  .background, .investment {
+    padding: 50px 5% !important;
+}
+.background p {
+    max-width: 90% !important;
+}
+}
+@media(max-width: 500px) {
+  .hero-titles p {
+    font-size: 20px !important;
+  }
+  .background h1, .investment h1{
+    font-size: 30px !important;
+  }
+  .footer-link {
+    font-size: 14px !important;
+  }
+  .footer-copy, .footer-partner {
+    font-size: 10px !important;
+    padding: 10px !important;
+  }
+  .footer-top {
+    padding: 10px !important;
+  }
+  .newsletter-left h4{
+    font-size: 16px !important;
+  }
+  .newsletter-left p{
+    font-size: 9px !important;
+  }
+  .newsletter-right {
+    font-size: 9px !important;
+  }
+}
+
+a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+}
+
+/* underline */
+a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+.footer-link::after{
+  width: 50% !important;
+}
+/* hover animation */
+a:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
 
 /* =========================
-  FRAME
+   HERO FRAME
 ========================= */
 
-.hero {
+.hero, .bio-hero {
+  position: relative;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   border: 1px solid rgba(255,255,255,0.3);
 }
 
-
 /* =========================
-  TOP BANNER
+   TOP BANNER
 ========================= */
 
-.hero::before {
+.hero::before ,.bio-hero::before{
   content: "MOHAMAD TARHINI";
   position: absolute;
   top: 0;
-  height: 20%;
-  width:100%;
+  height: 15%;
+  width: 100%;
   display: flex;
   align-items: center;
   padding-left: 90px;
@@ -42,15 +123,32 @@ body {
   border-bottom: 1px solid rgba(255,255,255,0.3);
   z-index: 3;
 }
+html[dir="rtl"] .hero::before , html[dir="rtl"] .bio-hero::before{
+letter-spacing: 0px;
+  content: "محمد ترحيني";
+  margin-left: -90px;
 
+  font-size: 46px;}
+
+html[dir="rtl"] .bio-hero {
+  flex-direction: row-reverse;
+}
+html[dir="rtl"] .bio-hero::before {
+  padding-left: 0;
+  padding-right: 90px;
+}
+html[dir="rtl"] .hero::before {
+  padding-left: 0;
+  padding-right: 90px;
+}
 /* =========================
-  BACKGROUND
+   BACKGROUND
 ========================= */
 
 .hero-bg {
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: -90;
 }
 
 .hero-bg img {
@@ -60,10 +158,21 @@ body {
 }
 
 /* =========================
-  PERSON
+   PERSON
 ========================= */
 
-.hero-person {
+/* Home */
+.home .hero-person {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 80vh;
+  z-index: 1;
+}
+
+/* Bio */
+.bio .hero-person {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -73,7 +182,7 @@ body {
 }
 
 /* =========================
-  RIGHT TITLES
+   RIGHT TITLES
 ========================= */
 
 .hero-titles {
@@ -83,6 +192,11 @@ body {
   transform: translateY(-50%);
   z-index: 2;
 }
+html[dir="rtl"] .hero-titles {
+  right: auto;
+  left: 80px;
+  text-align: left;
+}
 
 .hero-titles p {
   font-size: 26px;
@@ -90,34 +204,63 @@ body {
   margin-bottom: 12px;
   opacity: 0.85;
 }
-/* =========================
-   SIDENAV BASE
-========================= */
+html[dir="rtl"] .hero-titles p{
+  letter-spacing: 0px;
+    font-size: 36px;
 
-.sidenav {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 90px;
-  height: 80%;
-  border-right: 1px solid rgba(255,255,255,0.3);
-  z-index: 4;
+}
+/* =========================
+   SIDENAV
+========================= */
+html[dir="rtl"] .sidenav {
+  left: auto;
+  right: 0;
+  border-right: none;
+  border-left: 1px solid rgba(255,255,255,0.3);
+}
+html[dir="rtl"] .sidenav-expanded {
+  left: auto;
+  right: 90px;
 }
 
-.sidenav-collapsed {
+.sidenav {
+    position: absolute;
+  top: 15%;
+  bottom: auto;
+  width: 90px;
+  height: 85%;
+  border-right: 1px solid rgba(255, 255, 255, 0.8);
+  z-index: 4;
+  color: white;
+
+}
+
+.contact .sidenav {
+  position: absolute;
+  top: 15%;
+  bottom: auto;
+  width: 90px;
+  height: 85%;
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  z-index: 4;
+  color: black;
+}
+html[dir="rtl"] .contact .sidenav {
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
+
+}
+.contact .sidenav-collapsed {
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-/* =========================
-   MENU CONTAINER
-========================= */
-
+/* MENU */
 .menu-container {
   position: relative;
-  height: 60%;
+  height: 60vh;
   width: 100%;
   border-bottom: 1px solid rgba(255,255,255,0.3);
   display: flex;
@@ -125,25 +268,35 @@ body {
   align-items: center;
   cursor: pointer;
 }
-
-/* Rotated menu text */
+.contact .menu-container {
+  position: relative;
+  height: 60%;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
 .menu-text {
   transform: rotate(-90deg);
   font-size: 36px;
   letter-spacing: 2px;
 }
+html[dir="rtl"] .menu-text{
+    transform: rotate(90deg);
 
-/* =========================
-   EXPANDED PANEL
-========================= */
+  letter-spacing: 0px;
 
+}
+/* EXPANDED PANEL */
 .sidenav-expanded {
   position: absolute;
   left: 90px;
   top: 0;
   width: calc(100vw - 90px);
   height: 100%;
-  background: rgba(217, 217, 217, 0.5);
+  background: rgba(161, 161, 161, 0.9);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -152,23 +305,34 @@ body {
   pointer-events: none;
   transition: opacity 0.25s ease;
 }
-
-/* Expand ONLY on menu hover */
+.contact .sidenav-expanded {
+  position: absolute;
+  left: 90px;
+  top: 0;
+  color: black;
+  width: calc(100vw - 90px);
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 120px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
 .menu-container:hover .sidenav-expanded {
   opacity: 1;
   pointer-events: auto;
-  
 }
 
-/* =========================
-   SOCIAL CONTAINER
-========================= */
-
+/* SOCIAL */
 .social-container {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 20vh;
 }
 
 .social-icons {
@@ -182,12 +346,9 @@ body {
   height: 36px;
 }
 
-/* =========================
-   LANGUAGE
-========================= */
-
+/* LANGUAGE */
 .lang-switch {
-  height: 50px;
+  height: 5vh;
   font-size: 13px;
   display: flex;
   align-items: center;
@@ -196,11 +357,18 @@ body {
   cursor: pointer;
   gap: 5px;
 }
+.contact .lang-switch {
+  height: 50px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  gap: 5px;
+}
 
-/* =========================
-   EXPANDED CONTENT
-========================= */
-
+/* EXPANDED CONTENT */
 .nav-links {
   list-style: none;
 }
@@ -211,31 +379,135 @@ body {
 }
 
 .email {
-  font-size: 23px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: "Inter", sans-serif;
+  color: white;
 }
+.contact-email {
+  font-size: 23px;
+  color: black !important;
+}
+/* =========================
+   CONTENT SECTIONS
+========================= */
+
+.background,
+.investment {
+  padding:100px 80px;
+  color: black;
+}
+
+.background h1,
+.investment h1 {
+  padding-bottom: 25px;
+  font-size: 36px;
+  color: black;
+}
+
+.background p {
+  max-width: 80%;
+  padding-top: 20px;
+  font-size: 24px;
+  font-family: "Inter", sans-serif;
+}
+
+/* =========================
+   INVESTMENTS GRID
+========================= */
+
+.investment {
+  padding: 100px 80px;
+}
+
+.logo-grid {
+  display: grid;
+  gap: 40px;
+  justify-content: center;
+}
+
+.logo-card {
+  width: 350px;
+  height: 260px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.logo-card:hover {
+  opacity: 0.85;
+}
+
+.logo-card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* GRID BREAKPOINTS */
+@media (min-width: 1600px) {
+  .logo-grid {
+    grid-template-columns: repeat(4, 350px);
+  }
+}
+
+@media (max-width: 1599px) and (min-width: 1200px) {
+  .logo-grid {
+    grid-template-columns: repeat(3, 400px);
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 700px) {
+  .logo-grid {
+    grid-template-columns: repeat(2, 350px);
+  }
+}
+
+@media (max-width: 699px) {
+  .logo-grid {
+    grid-template-columns: 350px;
+  }
+}
+
+/* =========================
+   FOOTER
+========================= */
+html[dir="rtl"] .footer-middle {
+  direction: rtl;
+}
+
+html[dir="rtl"] .footer-copy {
+  border-right: none;
+  border-left: 1px solid rgba(255,255,255,0.3);
+}
+
 .site-footer {
+  position: relative;
   width: 100%;
   border-top: 1px solid rgba(255,255,255,0.3);
-  color: white;
-  font-family: "Kumar One", serif;
+  overflow: hidden;
+  bottom: 0;
 }
+
+/* FOOTER BACKGROUND */
 .footer-bg {
-  height: 340px;
-  width: 100%;
   position: absolute;
+  inset: 0;
   z-index: -1;
 }
 
 .footer-bg img {
   width: 100%;
-  height: 335px;
+  height: 100%;
   object-fit: cover;
-
 }
-/* =========================
-   TOP SECTION
-========================= */
 
+/* TOP */
 .footer-top {
   display: flex;
   justify-content: space-between;
@@ -266,10 +538,7 @@ body {
   font-size: 22px;
 }
 
-/* =========================
-   MIDDLE SECTION
-========================= */
-
+/* MIDDLE */
 .footer-middle {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -284,16 +553,13 @@ body {
   cursor: pointer;
 }
 
-/* =========================
-   BOTTOM SECTION
-========================= */
-
+/* BOTTOM */
 .footer-bottom {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  text-align: center; 
-  font-family: 'Inter' !important; 
+  text-align: center;
+  font-family: "Inter", sans-serif;
 }
 
 .footer-copy,
@@ -305,27 +571,291 @@ body {
 
 .footer-copy {
   border-right: 1px solid rgba(255,255,255,0.3);
-  width: 95%;
 }
-.footer-partner{
-  width: 105%;
+.bio-hero {
+  position: relative;
+  min-height: 100vh;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
 }
-.background, .investment {
-  padding-top: 120px;
-  padding-left: 90px;
-    color: black;
+.bio-hero .hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
 
+.bio-hero .hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.bio-hero-left {
+  position: relative;
+  width: 50%;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
-.background h1, .investment h1 {
-  padding-bottom: 25px;
-  font-size: 36px;
+.bio-hero-left .hero-person {
+  height: 80vh;
+}
+.bio-hero-right {
+  position: relative;
+  width: 50%;
+  overflow-y: auto;
+  z-index: 1;
+  padding: 120px 80px;
+  font-family: "Inter", sans-serif;
+  height: calc(100vh - 150px);
+  margin-top: 150px;
+}
+.bio-hero-right::-webkit-scrollbar {
+  width: 6px;
+}
+
+.bio-hero-right::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.3);
+}
+
+.bio-hero-right p {
+  font-family: Inter;
+font-weight: 600;
+font-style: Semi Bold;
+font-size: 24px;
+leading-trim: NONE;
+letter-spacing: 0%;
+margin-top: 20px;
+}
+
+/* =========================
+   RTL SWITCH (Arabic)
+========================= */
+
+html[dir="rtl"] .bio-hero {
+  flex-direction: row-reverse;
+}
+
+/* Swap paddings so text breathes correctly */
+html[dir="rtl"] .bio-hero-right {
+  padding: 120px 80px;
+  text-align: right;
+}
+
+/* Optional: keep image nicely aligned */
+html[dir="rtl"] .bio-hero-left {
+  justify-content: center;
+}
+/* RTL: force swap columns */
+html[dir="rtl"] .bio-hero-left { order: 2; }
+html[dir="rtl"] .bio-hero-right { order: 1; }
+
+/* Keep the background behind everything */
+html[dir="rtl"] .bio-hero .hero-bg { order: 0; }
+
+/* =========================
+   CONTACT PAGE WRAPPER
+========================= */
+
+.contact-page {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  min-height: 100vh;
+  margin-left: 90px; /* sidenav width */
+  background: white;
   color: black;
 }
-.background p{
-  max-width: 80%;
-  padding-top: 20px;
-  font-size: 24px;
-  font-family: 'Inter';
-  style: regular;
+
+/* RTL support */
+html[dir="rtl"] .contact-page {
+  margin-left: 0;
+  margin-right: 90px;
+  direction: rtl;
+}
+
+/* =========================
+   PAGE TITLE BAR
+========================= */
+
+.contact-page::before {
+  content: "MOHAMAD TARHINI";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 90px;
+  margin-left: -90px;
+  font-size: 36px;
+  letter-spacing: 2px;
+  border-bottom: 1px solid rgba(0,0,0,0.35);
+  background: white;
+  z-index: 2;
+}
+
+html[dir="rtl"] .contact-page::before {
+  content: "محمد ترحيني";
+  padding-left: 0;
+  padding-right: 90px;
+    margin-left: 0px;
+  margin-right: -90px;
+
+  font-size: 46px;
+  letter-spacing: 0;
+}
+
+/* =========================
+   LEFT SIDE – FORM
+========================= */
+
+.contact-right {
+  padding: calc(15vh + 60px) 80px 80px;
+}
+
+.contact-right h1 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+/* Form */
+.contact-form {
+  max-width: 520px;
+}
+
+.form-row.two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 28px;
+}
+
+.form-group label {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+  border: 1px solid #9e9e9e;
+  padding: 14px;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  background: transparent;
+}
+
+.form-group textarea {
+  min-height: 140px;
+  resize: none;
+}
+
+.contact-form button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 14px;
+  background: #d9d9d9;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* =========================
+   CENTER SEPARATOR
+========================= */
+
+.separator {
+  background: rgba(0,0,0,0.35);
+  margin-top: 15vh;
+}
+
+/* =========================
+   RIGHT SIDE – INFO
+========================= */
+
+.contact-left {
+  padding: calc(15vh + 80px) 80px 80px;
+}
+
+.contact-left h1 {
+  font-size: 36px;
+  margin-bottom: 50px;
+}
+
+/* Email block */
+.contact-email {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: "Inter", sans-serif;
+  color: white;
+}
+.contact-hero-email {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+
+.email-icon,
+.hero-email-icon {
+  width: 42px;
+  height: 42px;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* =========================
+   RTL FIXES
+========================= */
+
+html[dir="rtl"] .contact-right,
+html[dir="rtl"] .contact-left {
+  text-align: right;
+}
+
+
+html[dir="rtl"] .form-row.two-cols {
+  direction: rtl;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+  .contact-page {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  .contact-right,
+  .contact-left {
+    padding: calc(15vh + 40px) 24px 40px;
+  }
+
+  .form-row.two-cols {
+    grid-template-columns: 1fr;
+  }
 }

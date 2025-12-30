@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Mohamad Tarhini</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kumar+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="contact">
+
+<nav class="sidenav">
+
+<div class="sidenav-collapsed">
+
+    <!-- MENU -->
+    <div class="menu-container">
+    <span class="menu-text" data-key="menu"></span>
+
+    <!-- EXPANDED PANEL -->
+    <div class="sidenav-expanded">
+        <ul class="nav-links">
+            <li><a href="index.html" data-key="home"></a></li>
+            <li><a href="bio.html" data-key="experiencefooter"></a></li>
+            <li><a href="contact.html" data-key="contactfooter"></a></li>
+            <li><a href="index.html#investment" data-key="investmentfooter"></a></li>
+        </ul>
+
+        <div class="contact-separator"></div>
+        <div class="contact-hero-email">
+            <span class="hero-email-icon">@</span>
+            <span class="email-text">mohamadtarhini@gmail.com</span>
+        </div>
+    </div>
+    </div>
+
+    <!-- SOCIAL -->
+    <div class="social-container">
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/mohamad-tarhini-3aa94121/" target="_blank">
+                <img src="assets/linkedin-black-icon-logo-png_seeklogo-387472.png" alt="">
+            </a>
+            <!-- <img src="assets/xlogo.png" alt="">
+            <img src="assets/instalogo.png" alt=""> -->
+        </div>
+    </div>
+
+    <!-- LANGUAGE -->
+    <div class="lang-switch">
+    <span onclick="setLang('ar')">AR</span> |
+    <span onclick="setLang('en')">EN</span>
+    </div>
+
+</div>
+
+</nav>
+<section class="contact-page">
+
+<!-- LEFT: FORM -->
+<div class="contact-right">
+    <h1 data-key="GetInTouch">Get In Touch</h1>
+
+    <form class="contact-form">
+    <div class="form-row two-cols">
+        <div class="form-group">
+        <label for="firstName" data-key="Name">Name</label>
+        <input type="text" id="firstName" name="firstName">
+        </div>
+
+        <div class="form-group">
+        <label for="lastName" data-key="lastName">&nbsp;</label>
+        <input type="text" id="lastName" name="lastName">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="email" data-key="Email">Email</label>
+        <input type="email" id="email" name="email">
+    </div>
+
+    <div class="form-group">
+        <label for="message" data-key="Message">Message</label>
+        <textarea id="message" name="message"></textarea>
+    </div>
+
+    <button type="submit" data-key="Submit">Submit</button>
+    </form>
+</div>
+
+<!-- SEPARATOR -->
+<div class="separator"></div>
+
+<!-- RIGHT: INFO -->
+<div class="contact-left">
+    <h1 data-key="Looking">Looking for something else?</h1>
+
+    <div class="contact-email">
+    <span class="email-icon">@</span>
+    <span class="email-text">mohamadtarhini@gmail.com</span>
+    </div>
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-bg">
+        <img src="assets/image1.jpeg" alt="">
+    </div>
+<!-- TOP: Newsletter -->
+<div class="footer-top">
+    <div class="newsletter-left">
+    <h4 data-key="Sign_up">Sign Up</h4>
+    <p data-key="SubscribeUpdates">Subscribe to insights & updates</p>
+    </div>
+
+    <div class="newsletter-right">
+    <span data-key="Subscribe">Subscribe to Newsletter</span>
+    <span class="arrow">→</span>
+    </div>
+</div>
+
+<!-- MIDDLE: Links -->
+<div class="footer-middle">
+    <a class="footer-link" href="bio.html" data-key="experiencefooter"></a>
+    <a class="footer-link"href="contact.html" data-key="contactfooter"></a>
+    <a class="footer-link" href="index.html#investment" data-key="investmentfooter">></a>
+</div>
+
+<!-- BOTTOM: Legal -->
+<div class="footer-bottom">
+    <div class="footer-copy" data-key="footer-copy">
+    © 2025 Mohamad Tarhini. All rights reserved.
+    </div>
+
+    <div class="footer-partner" data-key="footer-partner">
+    Mohamad Tarhini is Founder & Managing Partner of DAIS Group and Co-Founder of NUWA Ventures
+    </div>
+</div>
+
+</footer>
+<script src="assets/js/lang.js"></script>
+<script>
+if (document.startViewTransition) {
+document.addEventListener("click", e => {
+    const link = e.target.closest("a");
+    if (!link || link.target === "_blank") return;
+
+    e.preventDefault();
+    document.startViewTransition(() => {
+    window.location = link.href;
+    });
+});
+}
+</script>
+
+</body>
+</html>
