@@ -63,6 +63,10 @@
     <div class="hero-bg">
         <img src="assets/image1.jpeg" alt="">
     </div>
+    <div class="hero-banner">
+        <a href="index.html"><h1 data-key="name">MOHAMAD TARHINI</h1></a>
+        <p class="tagline" data-key="tagline">Engineer | Entrepreneur | Investor</p>
+    </div>
 
     <img src="assets/c 1.png" alt="Profile" class="hero-person"/>
 
@@ -75,16 +79,27 @@
 </section>
 <section class="background">
     <h1 data-key="background">Background</h1>
-    <p data-key="bg_p1">Mohamad Tarhini is an engineer, entrepreneur, and investor focused on turning innovation into measurable impact. </p>
+    <p data-key="bg_p1"></p>
 
-<p data-key="bg_p2">With over 20 years of international experience across the Middle East, Europe, and Latin America, 
-he works at the intersection of sustainability, technology, and venture creation.</p>
+    <p data-key="bg_p2"></p>
 
-<p data-key="bg_p3">As Founder and Managing Partner of DAIS Group, he leads integrated consulting, engineering, and digital solutions across environment, energy, cities, and agriculture, supporting governments, institutions, and organizations in delivering resilient, future-ready outcomes.</p>
+    <p data-key="bg_p3"></p>
 
-<p data-key="bg_p4">He is also Co-Founder of NUWA Ventures, a hybrid venture studio and investment platform scaling technology-driven solutions in Agri-Tech, Clean Tech, Health & Wellbeing, and EdTech.</p>
+    <p data-key="bg_p4"></p>
 
-<p data-key="bg_p5">Guided by a belief that sustainability and innovation drive lasting progress, Mohamad connects policy with practice and ideas with real-world impact.</p>
+    <p data-key="bg_p5"></p>
+</section>
+<section class="background">
+    <h1 data-key="journey">Journey</h1>
+    <p data-key="j_p1"></p>
+
+    <p data-key="j_p2"></p>
+
+    <p data-key="j_p3"></p>
+
+    <p data-key="j_p4"></p>
+
+    <p data-key="j_p5"></p>
 </section>
 <section class="investment" id="investment">
 <h1 data-key="investmentfooter">Investments</h1>
@@ -164,12 +179,15 @@ if (document.startViewTransition) {
     const link = e.target.closest("a");
     if (!link || link.target === "_blank") return;
 
+    if (link.hash && link.pathname === location.pathname) return;
+
     e.preventDefault();
     document.startViewTransition(() => {
       window.location = link.href;
     });
   });
 }
+
 </script>
 </body>
 </html>

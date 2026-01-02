@@ -9,28 +9,27 @@
   "investment": "02 Investments",
   "investmentfooter": "Investments",
   
+  "name": "MOHAMAD TARHINI",
+  "tagline": "Engineer | Entrepreneur | Investor",
+
   "background": "Background",
 
-  "bg_p1": "Mohamad Tarhini is an engineer, entrepreneur, and investor focused on turning innovation into measurable impact.",
+  "bg_p1": "Mohamad Tarhini is an engineer, entrepreneur, and investor with more than two decades of experience bridging innovation with tangible impact across the Middle East, Europe, and Latin America.",
+  "bg_p2": "He is the Founder and Managing Partner of DAIS Group, an integrated platform delivering consulting, engineering, and digital solutions across the environment, energy, cities & urban development, and agriculture sectors, and the Co-Founder and Managing Partner of NUWA Venture Partners, a hybrid venture-studio and investment platform connecting purpose-driven founders with strategic capital.",
+  "bg_p3": "Throughout his career, Mohamad has supported governments, investors, and organizations in designing and implementing sustainability and circular economy strategies that deliver measurable results. His work spans policy reform, institutional design, and infrastructure development - focused on turning innovation into scalable, real-world impact.",
+  "bg_p4": "Mohamad holds a European master’s degree in project management of energy & environment engineering from École des Mines (France) and KTH Royal Institute of Technology (Sweden), and is a Project Management Professional (PMP), Climate Adaptation Finance Expert, and International Waste Manager (ISWA).",
 
-  "bg_p2": "With over 20 years of international experience across the Middle East, Europe, and Latin America, he works at the intersection of sustainability, technology, and venture creation.",
-
-  "bg_p3": "As a Founder and Managing Partner of DAIS Group, he leads integrated consulting, engineering, and digital solutions across environment, energy, cities, and agriculture, supporting governments, institutions, and organizations in delivering resilient, future-ready outcomes.",
-
-  "bg_p4": "He is also a Co-Founder of NUWA Venture Partners, a hybrid venture studio and investment platform scaling technology-driven solutions in Agri-Tech, Clean Tech, Health & Wellbeing, and EdTech.",
-
-  "bg_p5": "Guided by a belief that sustainability and innovation drive lasting progress, Mohamad connects policy with practice and ideas with real-world impact.",
-
-
-  "bio_p1": "Mohamad Tarhini is an engineer, entrepreneur, and investor who bridges innovation with tangible impact. Over the past two decades, he has worked across the Middle East, Europe, and Latin America, combining technical expertise, strategic advisory, and venture creation to help governments, investors, and startups drive sustainable transformation.",
-
-  "bio_p2": "As a Founder and Managing Partner of DAIS Group, Mohamad leads an integrated platform that delivers consulting, engineering, and digital solutions across the environment, energy, cities & urban development, and agriculture sectors. Under his leadership, DAIS has supported national institutions and international organizations in advancing sustainability, waste management, resource efficiency, and climate resilience, translating environmental goals into measurable outcomes.",
-
-  "bio_p3": "Building on this foundation, Mohamad co-founded NUWA Venture Partners, a hybrid venture-studio and investment platform that empowers entrepreneurs and investors to scale technology-driven solutions in Agri-Tech, Clean Tech, Health & Wellbeing, and EdTech. Through NUWA Venture Partners, he is shaping ecosystems where innovation unlocks both economic value and environmental benefit.",
-
-  "bio_p4": "Mohamad holds a European Master’s in Project Management of Energy & Environment Engineering from École des Mines (France), KTH Royal Institute of Technology (Sweden), and Universidad Politécnica de Madrid (Spain), and a Bachelor’s in Electrical Engineering from the American University of Beirut. He is a Climate Adaptation Finance Expert, Project Management Professional (PMP), International Waste Manager (ISWA), and an alumnus of the World Economic Forum’s Global Shapers and Responsible Leadership programs.",
-
-  "bio_p5": "Guided by the conviction that sustainability and innovation are catalysts for meaningful progress, Mohamad leads ventures that connect policy with practice, technology with purpose, and ideas with lasting impact.",
+  "j_p1":"Embracing change and leadership has shaped my professional journey. I began my career in oil and gas, but in 2009 I made a deliberate decision to shift toward sustainability and the circular economy - a transition that redefined both my purpose and the way I approach complex systems.",
+  "j_p2":"Supported by an Erasmus Mundus scholarship, I pursued a European master’s degree in energy and environmental engineering in Luxembourg, Stockholm, Nantes, and Madrid. That experience exposed me to diverse perspectives and collaborative models of innovation and reinforced a core belief that addressing environmental and societal challenges requires bridging disciplines, cultures, and ways of thinking.",
+  "j_p3":"Returning to the Middle East, I worked closely with governments and development institutions to design policies, frameworks, and strategies for sustainable growth - helping translate ambitious environmental goals into actionable and measurable programs. Over time, I recognized that lasting impact also depends on the ability to scale solutions beyond policy, through entrepreneurship and investment.",
+  "j_p4":"In 2017, I founded DAIS Group to connect engineering rigor with sustainability leadership, delivering practical solutions across the environment, energy, cities, and agriculture sectors. Building on this foundation, I later co-founded NUWA Venture Partners, a hybrid venture-studio and investment platform that empowers founders and investors to build and scale purpose-driven ventures across Agri-Tech, Clean Tech, Health & Wellbeing, EdTech, Cybersecurity, and digital marketplaces.",
+  "j_p5":"Across every chapter, my mission remains consistent: to lead with integrity, engineer impact, and build ventures that connect innovation with real-world application - shaping ecosystems where technology, capital, and purpose come together to create lasting economic and societal value.",
+  
+  "bio_p1":"Mohamad Tarhini is an engineer, entrepreneur, and investor who bridges innovation with tangible impact. Over the past two decades, he has worked across the Middle East, Europe, and Latin America - combining technical expertise, strategic advisory, and venture creation to help governments, investors, and startups drive sustainable transformation.",
+  "bio_p2":"As Founder and Managing Partner of DAIS Group, Mohamad leads an integrated platform that delivers consulting, engineering, and digital solutions across the environment, energy, cities & urban development, and agriculture sectors. Under his leadership, DAIS has supported national institutions and international organizations in advancing sustainability, waste management, resource efficiency, and climate resilience - translating environmental goals into measurable outcomes.",
+  "bio_p3":"Building on this foundation, Mohamad co-founded NUWA Venture Partners, a hybrid venture-studio and investment platform that empowers entrepreneurs and investors to scale technology-driven solutions in Agri-Tech, Clean Tech, Health & Wellbeing, and EdTech. Through NUWA Venture Partners, he is shaping ecosystems where innovation unlocks both economic value and environmental benefits.",
+  "bio_p4":"Mohamad holds a master’s degree in project management of energy & environment engineering from École des Mines (France), KTH Royal Institute of Technology (Sweden), and Universidad Politécnica de Madrid (Spain), and a bachelor’s in electrical engineering from the American University of Beirut. He is a certified Climate Adaptation Finance Expert, Project Management Professional (PMP), and International Waste Manager (ISWA), and an alumnus of the World Economic Forum’s Global Shapers and Responsible Leadership programs.",
+  "bio_p5":"Guided by the conviction that sustainability and innovation are catalysts for meaningful progress, Mohamad continues to lead and scale ventures that connect policy with practice, technology with purpose, and ideas with lasting impact.",
 
   "Name": "Name",
   "lastName": "Last Name",

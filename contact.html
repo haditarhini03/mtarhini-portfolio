@@ -57,6 +57,12 @@
 
 </nav>
 <section class="contact-page">
+<div class="hero-banner contact-banner">
+  <a href="index.html"><h1 data-key="name">MOHAMAD TARHINI</h1></a>
+  <p class="tagline" data-key="tagline">
+    Engineer | Entrepreneur | Investor
+  </p>
+</div>
 
 <!-- LEFT: FORM -->
 <div class="contact-right">
@@ -145,16 +151,19 @@
 <script src="assets/js/lang.js"></script>
 <script>
 if (document.startViewTransition) {
-document.addEventListener("click", e => {
+  document.addEventListener("click", e => {
     const link = e.target.closest("a");
     if (!link || link.target === "_blank") return;
 
+    if (link.hash && link.pathname === location.pathname) return;
+
     e.preventDefault();
     document.startViewTransition(() => {
-    window.location = link.href;
+      window.location = link.href;
     });
-});
+  });
 }
+
 </script>
 
 </body>

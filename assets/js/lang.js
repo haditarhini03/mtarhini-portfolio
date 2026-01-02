@@ -44,3 +44,16 @@ function setLang(lang) {
 
 // Initial load
 loadLang(currentLang);
+window.addEventListener("load", () => {
+  if (window.location.hash) {
+    const target = document.querySelector(window.location.hash);
+    if (!target) return;
+
+    // wait one frame to ensure layout is final
+    requestAnimationFrame(() => {
+      target.scrollIntoView({
+        block: "start"
+      });
+    });
+  }
+});

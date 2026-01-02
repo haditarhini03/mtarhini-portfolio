@@ -11,9 +11,7 @@ html {
     overflow-x: hidden;
 
 }
-#investment {
-  scroll-margin-top: -100px;
-}
+
 body {
   color: white;
   min-height: 100vh;
@@ -109,38 +107,48 @@ a:hover::after {
    TOP BANNER
 ========================= */
 
-.hero::before ,.bio-hero::before{
-  content: "MOHAMAD TARHINI";
+.hero-banner {
   position: absolute;
   top: 0;
   height: 15%;
   width: 100%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   padding-left: 90px;
-  font-size: 36px;
-  letter-spacing: 2px;
   border-bottom: 1px solid rgba(255,255,255,0.3);
   z-index: 3;
 }
-html[dir="rtl"] .hero::before , html[dir="rtl"] .bio-hero::before{
-letter-spacing: 0px;
-  content: "محمد ترحيني";
-  margin-left: -90px;
 
-  font-size: 46px;}
-
-html[dir="rtl"] .bio-hero {
-  flex-direction: row-reverse;
+.hero-banner h1 {
+  font-size: 36px;
+  letter-spacing: 2px;
+  color: white;
 }
-html[dir="rtl"] .bio-hero::before {
+
+.hero-banner .tagline {
+  font-size: 14px;
+  letter-spacing: 2px;
+  opacity: 0.85;
+  margin-top: 6px;
+}
+
+/* RTL */
+html[dir="rtl"] .hero-banner {
   padding-left: 0;
   padding-right: 90px;
+  text-align: right;
 }
-html[dir="rtl"] .hero::before {
-  padding-left: 0;
-  padding-right: 90px;
+
+html[dir="rtl"] .hero-banner h1 {
+  font-size: 46px;
+  letter-spacing: 0 !important;
 }
+html[dir="rtl"] .hero-banner p{
+  font-size: 22px;
+  letter-spacing: 0 !important;
+}
+
 /* =========================
    BACKGROUND
 ========================= */
@@ -681,31 +689,43 @@ html[dir="rtl"] .contact-page {
    PAGE TITLE BAR
 ========================= */
 
-.contact-page::before {
-  content: "MOHAMAD TARHINI";
+.contact-banner {
   position: absolute;
   top: 0;
-  left: 0;
   height: 15vh;
-  width: 100%;
+  width: 130vw;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   padding-left: 90px;
   margin-left: -90px;
-  font-size: 36px;
-  letter-spacing: 2px;
-  border-bottom: 1px solid rgba(0,0,0,0.35);
   background: white;
+  border-bottom: 1px solid rgba(0,0,0,0.35);
   z-index: 2;
+  color: black;
 }
 
-html[dir="rtl"] .contact-page::before {
-  content: "محمد ترحيني";
+.contact-banner h1 {
+  font-size: 36px;
+  letter-spacing: 2px;
+  color: black;
+}
+
+.contact-banner .tagline {
+  font-size: 14px;
+  opacity: 0.7;
+  margin-top: 6px;
+}
+
+/* RTL */
+html[dir="rtl"] .contact-banner {
   padding-left: 0;
   padding-right: 90px;
-    margin-left: 0px;
   margin-right: -90px;
+  text-align: right;
+}
 
+html[dir="rtl"] .contact-banner h1 {
   font-size: 46px;
   letter-spacing: 0;
 }
@@ -744,7 +764,9 @@ html[dir="rtl"] .contact-page::before {
   font-size: 14px;
   margin-bottom: 8px;
 }
-
+html[dir="rtl"] .form-group label{
+  font-size: 18px;
+}
 .form-group input,
 .form-group textarea {
   border: 1px solid #9e9e9e;
@@ -768,7 +790,9 @@ html[dir="rtl"] .contact-page::before {
   font-size: 14px;
   cursor: pointer;
 }
-
+html[dir="rtl"] .contact-form button{
+  font-size: 18px;
+}
 /* =========================
    CENTER SEPARATOR
 ========================= */
@@ -839,22 +863,54 @@ html[dir="rtl"] .form-row.two-cols {
    MOBILE
 ========================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1160px) {
+  .hero-person{
+    display: none;
+  }
+  .bio-hero-left{
+    display: none;
+  }
+  .bio-hero-right{
+    width: 90%;
+  }
   .contact-page {
     grid-template-columns: 1fr;
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: 5%;
+    margin-right: 5%;
+
   }
 
   .separator {
     display: none;
   }
-
-  .contact-right,
-  .contact-left {
-    padding: calc(15vh + 40px) 24px 40px;
+  .sidenav{
+    display: none;
   }
-
+  .contact-right{
+    width: 90%;
+    padding: 160px 24px 60px 24px;
+  }
+  .contact-left {
+    padding: 60px 24px;
+  }
+  .contact-left h1{
+    font-size: 24px;
+  }
+  .contact-banner h1{
+    font-size: 22px;
+  }
+  .contact-banner p{
+    font-size: 16px;
+  }
+  .hero-banner h1{
+    font-size: 22px;
+  }
+  .hero-banner p{
+    font-size: 16px;
+  }
+  .contact-email {
+    font-size: 18px;
+  }
   .form-row.two-cols {
     grid-template-columns: 1fr;
   }
