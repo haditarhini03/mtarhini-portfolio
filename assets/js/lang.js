@@ -1,5 +1,8 @@
 // Get saved language or default to English
-let currentLang = localStorage.getItem("lang") || "en";
+let currentLang =  "en";
+
+//Replace the above line with the below if you want the website to remember the lang selected previously by the user
+//let currentLang = localStorage.getItem("lang") || "en";
 
 // Apply direction and html attributes
 function applyDirection(lang) {
