@@ -31,10 +31,11 @@ html, body {
 
 @media (max-width: 900px){
   .background, .investment {
-    padding: 50px 5% !important;
+    padding: 30px 5% !important;
 }
 .background p {
     max-width: 90% !important;
+    font-size: 18px !important;
 }
 }
 @media(max-width: 500px) {
@@ -62,6 +63,12 @@ html, body {
   }
   .newsletter-right {
     font-size: 9px !important;
+  }
+  .bio-hero-right {
+    padding: 50px 5% !important;
+  }
+    .bio-hero-right p{
+    font-size: 18px !important;
   }
 }
 
@@ -879,16 +886,74 @@ html[dir="rtl"] .form-row.two-cols {
     margin-right: 5%;
 
   }
+  .sidenav, .contact .sidenav {
+    border-right: 0px;
+    border-top: 0px;
+      
 
-  .separator {
+  }
+  dir [html="rtl"] .contact .sidenav-collapsed {
+    border-left: 0px !important;
+    border-bottom: 0px !important;
+  }
+  .separator , .contact .separator{
     display: none;
   }
-  .sidenav{
+  .nav-links, .contact .nav-links{
     display: none;
+  }
+    .social-container, .contact .social-container{
+    display: none;
+  }
+  .email, .contact .email{
+    display: none;
+  }
+  .menu-container,.contact .menu-container{
+    display: none;
+  }
+
+  .sidenav, .contact .sidenav {
+  position: relative;
+}
+
+.lang-switch ,.contact .lang-switch {
+  position: absolute;
+  top:16vh;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  display: block !important;
+  border-top: 0px;
+}
+
+  .hero-banner{
+    padding-left: 5%;
+  }
+  html [dir="rtl"] .hero-banner{
+    padding-right: 5%;
+    padding-left: 0;
   }
   .contact-right{
-    width: 90%;
+    width: 90vw;
+    margin-top: 5vh;
     padding: 160px 24px 60px 24px;
+    margin-right: -60px;
+  }
+  html [dir="rtl"] .contact-right {
+    margin-left: 0px;
+    margin-right: -60px;
+
+  }
+  .bio-hero-right {
+    margin-top: 190px !important;
+  }
+  .contact-banner{
+    padding-left: 20% !important;
+  }
+  html [dir="rtl"] .contact-banner{
+    padding-right: 20% !important;
+        padding-left: 0 !important;
+
   }
   .contact-left {
     padding: 60px 24px;
